@@ -1,14 +1,25 @@
-# Getting Started with Create React App
+# Password Management Browser Extension
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Open app as browser Extention
+1. Run `yarn build` in terminal of project directory.
+2. Goto `chrome://extensions` on your chrome browser.
+3. Enable **Developer Mode** by clinking on the toggle on top-right corner.
+4. Click the **Load Unpacked** button and select the *build* folder created in project directory.
+
+Setup is complete, you can now see the new extention among the existing extentions.\
+**_Note:_** *Chrome* should be used for development as Manifest V3 is not supported on Firefox. Have not tested for any other browser yet.
+
+___
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode. Use this when you only want to work on WebPage\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\

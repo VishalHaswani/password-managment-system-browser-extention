@@ -1,25 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+    "name": "Bravo Password Manager",
+    "manifest_version": 3,
+    "version": "0.1.0",
+    "description": "Save your passwords securly and effortlessly. Only remember one password.",
+    "permissions": ["storage", "tabs"],
+    "background": {
+        "service_worker": "background.js"
     },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+    "action": {
+        "default_icon": {
+            "16": "/assets/icon-16x16.png",
+            "24": "/assets/icon-24x24.png",
+            "32": "/assets/icon-32x32.png"
+        },
+        "default_title": "Bravo Password Manager",
+        "default_popup": "index.html"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
 }
