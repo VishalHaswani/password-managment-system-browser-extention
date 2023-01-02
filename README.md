@@ -1,10 +1,11 @@
 # Password Management Browser Extension
 
-## Setup project on local machine
+## Developers guide
+### Setup project on local machine
 1. Run `git clone <HTTPS_URL_of_repo>` on command line.
 2. In project root directory run `yarn` or `yarn install` to setup all dependencies.
 
-## Open app as browser Extention
+### Open app as browser Extention
 1. Run `yarn build` in terminal of project directory.
 2. Goto `chrome://extensions` on your chrome browser.
 3. Enable **Developer Mode** by clinking on the toggle on top-right corner.
@@ -13,6 +14,9 @@
 Setup is complete, you can now see the new extention among the existing extentions.\
 **_Note:_** *Chrome* should be used for development as Manifest V3 is not supported on Firefox. Have not tested for any other browser yet.
 
+### Using ESLint
+1. run `yarn lint` to get details of linting errors in the src folder.
+2. Run `yarn lint --fix` to fix common errors, but do review changes before you raise PR.
 ***
 
 ## Available Scripts
