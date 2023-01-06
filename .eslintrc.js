@@ -5,11 +5,11 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
     'eslint:recommended',
+    'standard-with-typescript',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking'
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:react/recommended'
   ],
   overrides: [
   ],
@@ -21,9 +21,15 @@ module.exports = {
     project: ['./tsconfig.eslint.json']
   },
   plugins: [
+    '@typescript-eslint',
     'react',
-    '@typescript-eslint'
+    'baseui'
   ],
   rules: {
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }
