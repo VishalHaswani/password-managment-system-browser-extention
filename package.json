@@ -1,0 +1,17 @@
+{
+  "name": "password-managment-system-browser-extention",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/VishalHaswani/password-managment-system-browser-extention",
+  "author": "VishalHaswani <vishal.haswani2019@vitstudent.ac.in>",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "extension": "yarn workspace extension"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
