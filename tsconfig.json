@@ -5,7 +5,7 @@
 ],
 "references": [
  {
-    "path": "./packages/extension/"
+   "path": "./packages/extension/"
  }
 ]
 }
