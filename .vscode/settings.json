@@ -2,8 +2,10 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll": true
     },
     "editor.tabSize": 2,
     "eslint.alwaysShowStatus": true,
+    "eslint.workingDirectories": ["packages/extension", "packages/server"],
+    "eslint.validate": ["javascript", "typescript"]
 }
