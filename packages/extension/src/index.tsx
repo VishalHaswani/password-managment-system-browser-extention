@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
+import { MemoryRouter } from 'react-router-dom'
 import { Client as Styletron } from 'styletron-engine-atomic'
 import { BaseProvider, LightTheme } from 'baseui'
 import { Provider as StyletronProvider } from 'styletron-react'
@@ -15,11 +16,13 @@ const root = ReactDOM.createRoot(
 )
 root.render(
   <StrictMode>
-    <StyletronProvider value={engine}>
-      <BaseProvider theme={LightTheme}>
-        <App />
-      </BaseProvider>
-    </StyletronProvider>
+    <MemoryRouter>
+      <StyletronProvider value={engine}>
+        <BaseProvider theme={LightTheme}>
+          <App />
+        </BaseProvider>
+      </StyletronProvider>
+    </MemoryRouter>
   </StrictMode>
 )
 
