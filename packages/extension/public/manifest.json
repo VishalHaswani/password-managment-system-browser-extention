@@ -1,19 +1,19 @@
 {
-    "name": "Bravo Password Manager",
-    "manifest_version": 3,
-    "version": "0.1.0",
-    "description": "Save your passwords securly and effortlessly. Only remember one password.",
-    "permissions": ["storage", "tabs",  "contextMenus"],
-    "background": {
-        "service_worker": "background.js"
+  "name": "Bravo Password Manager",
+  "manifest_version": 3,
+  "version": "0.1.0",
+  "description": "Save your passwords securly and effortlessly. Only remember one password.",
+  "permissions": ["storage", "tabs", "contextMenus"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "/assets/icon-16x16.png",
+      "24": "/assets/icon-24x24.png",
+      "32": "/assets/icon-32x32.png"
     },
-    "action": {
-        "default_icon": {
-            "16": "/assets/icon-16x16.png",
-            "24": "/assets/icon-24x24.png",
-            "32": "/assets/icon-32x32.png"
-        },
-        "default_title": "Bravo Password Manager",
-        "default_popup": "index.html"
-    }
+    "default_title": "Bravo Password Manager",
+    "default_popup": "index.html"
+  }
 }

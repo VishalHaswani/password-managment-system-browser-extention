@@ -7,5 +7,14 @@
     "editor.tabSize": 2,
     "eslint.alwaysShowStatus": true,
     "eslint.workingDirectories": ["packages/extension", "packages/server"],
-    "eslint.validate": ["javascript", "typescript"]
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
