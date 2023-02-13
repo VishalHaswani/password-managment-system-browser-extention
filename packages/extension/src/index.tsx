@@ -1,15 +1,25 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
+import { Client as Styletron } from 'styletron-engine-atomic'
+import { BaseProvider, LightTheme } from 'baseui'
+import { Provider as StyletronProvider } from 'styletron-react'
+
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+
+const engine = new Styletron()
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
   <StrictMode>
-    <App />
+    <StyletronProvider value={engine}>
+      <BaseProvider theme={LightTheme}>
+        <App />
+      </BaseProvider>
+    </StyletronProvider>
   </StrictMode>
 )
 
