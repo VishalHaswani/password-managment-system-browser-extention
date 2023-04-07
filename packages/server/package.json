@@ -7,15 +7,21 @@
   "type": "module",
   "scripts": {
     "build": "yarn tsc",
-    "dev": "yarn tsc -w & nodemon build/src/index.js",
+    "dev": "yarn tsc -w & nodemon build/src/app.js",
     "lint": "yarn eslint src/*",
-    "serve": "node build/src/index.js "
+    "serve": "node build/src/app.js "
   },
   "dependencies": {
     "@types/express": "^4.17.15",
+    "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^18.11.18",
+    "@types/nodemailer": "^6.4.7",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3",
+    "nodemailer": "^6.9.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.1",
