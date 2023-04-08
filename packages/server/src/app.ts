@@ -17,7 +17,7 @@ const options: MongooseConnectOptions = {
   useUnifiedTopology: true,
 };
 
-mongoose.connect('mongodb://0.0.0.0:27017/authapp', options)
+mongoose.connect(process.env.DB_URL as string, options)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log('Error connecting to MongoDB:', err));
 // Set up body-parser middleware
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set up the user routes
-app.use('/api/user', userRoutes);
+app.use('/api/v1/user', userRoutes);
 
 // Set up the default route
 app.get('/', (req: express.Request, res: express.Response) => {

@@ -29,5 +29,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "files":["types.d.ts"]
 }

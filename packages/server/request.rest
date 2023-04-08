@@ -1,0 +1,61 @@
+//  SIGNUP API ENDPOINTS
+###
+POST  http://localhost:3000/api/v1/user/register
+Content-Type: application/json
+
+{
+    //  Change email here
+    "email":"golosih967@marikuza.com"
+}
+
+###
+
+POST  http://localhost:3000/api/v1/user/verify-email
+Content-Type: application/json
+
+{
+    //  Enter otp here
+    "otp": "0ea59beb"
+}
+
+### 
+POST  http://localhost:3000/api/v1/user/set-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJnb2xvc2loOTY3QG1hcmlrdXphLmNvbSIsImlzVmFsaWQiOmZhbHNlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MDk0OTE2Mn0.43Gm1YPVoDvZyOd68yAdPBQu7cDnQ2c_cvZTKiiNwJQ
+
+{
+    //  Change mail here
+    //"email":"golosih967@marikuza.com", 
+    // Change password here
+    "password" : "password1"
+}
+
+
+###
+POST  http://localhost:3000/api/v1/user/verify-2fa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJnb2xvc2loOTY3QG1hcmlrdXphLmNvbSIsImlzVmFsaWQiOmZhbHNlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MDk1MjI5OX0.wzgtv-S5WEpebA3867bmxUslr_wyayi8yB_awgQDvpc
+
+{
+    //  Enter authenticator api code here
+    "code" : "808147"
+}
+
+### //  LOGIN API ENDPOINTS
+
+POST http://localhost:3000/api/v1/user/login
+Content-Type: application/json
+
+{
+    "email":"golosih967@marikuza.com",
+    "password": "password1"
+}
+
+### // Protected Route
+GET http://localhost:3000/api/v1/user/protected
+Content-Type: application/json
+//  Change token here after Bearer
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJnb2xvc2loOTY3QG1hcmlrdXphLmNvbSIsImlzVmFsaWQiOnRydWUsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgwOTUyMzkxLCJleHAiOjE2ODA5NTI1MTF9.guUOtfWPeoJuHbdrCTDyLWg8wQ8f9YLrFSC4pQabQG8
+
+###
+
