@@ -24,11 +24,10 @@
     
     /* Completeness */
     "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
-    // "allowJs":true,
-    // "checkJs": true
   },
   "include": [
     "src"
-  ],
-  "files":["types.d.ts"]
+, "src/types.ts"  ],
+  "files":["src/types.ts"]
 }
+

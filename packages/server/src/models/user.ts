@@ -1,14 +1,6 @@
-import mongoose, { Document, Model } from 'mongoose';
-
-export interface IUser extends Document {
-  email: string;
-  password: string | null;
-  files: string[];
-  otp: string | undefined;
-  token: string | undefined;
-  isVerified: boolean;
-  secret: string | null;
-}
+import mongoose, { Model } from 'mongoose';
+// Types Import
+import { IUser } from '../types.js';
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -20,12 +12,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: null,
   },
-  files: {
-    type: [String],
-    default: [],
+  file: {
+    type: String,
+    default: undefined,
   },
-  otp: String,
-  token: String,
   isVerified: {
     type: Boolean,
     default: false,

@@ -1,20 +1,19 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
-// interface AuthenticatedRequest extends Request {
-//   userID?: string;
-// }
+// Type imports
+import { DecodedToken, RequestWithUserID } from '../types.js';
 
-const userInfo = async (req: Request, res: Response, next: NextFunction) => {
+const userInfo = async (req: RequestWithUserID, res: Response, next: NextFunction) => {
   try {
-    const authHeader:any = req.headers.authorization;
+    const authHeader: string | undefined = req.headers.authorization;
     if (!authHeader) {
       return res.status(401).json({ message: 'Authorization header missing' });
     }
     const token = authHeader.split(' ')[1];
 
-    const { userID }: any = jwt.decode(token);
-    (req as any).userID = userID;
+    const { userID } = jwt.decode(token) as DecodedToken;
+    req.userID = userID;
     next();
   } catch (error) {
     res.status(400).json({ message: 'Try again in sometime', error });

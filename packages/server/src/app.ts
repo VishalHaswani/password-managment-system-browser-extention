@@ -5,19 +5,19 @@ import userRoutes from './routes/user.js';
 
 // Load environment variables
 dotenv.config();
-const app:express.Application = express();
+const app: express.Application = express();
 
 interface MongooseConnectOptions extends ConnectOptions {
   useNewUrlParser: boolean,
   useUnifiedTopology: boolean
 }
 
-const options: MongooseConnectOptions = {
+const mongooseConnectOptions: MongooseConnectOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
 
-mongoose.connect(process.env.DB_URL as string, options)
+mongoose.connect(process.env.DB_URL as string, mongooseConnectOptions)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log('Error connecting to MongoDB:', err));
 // Set up body-parser middleware

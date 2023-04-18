@@ -25,6 +25,7 @@
     "nodemailer": "^6.9.1"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.7",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",
