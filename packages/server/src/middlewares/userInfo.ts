@@ -1,8 +1,8 @@
-import { Response, NextFunction } from 'express';
+import type { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
 // Type imports
-import { DecodedToken, RequestWithUserID } from '../types.js';
+import { type DecodedToken, RequestWithUserID } from '../types.js';
 
 const userInfo = async (req: RequestWithUserID, res: Response, next: NextFunction) => {
   try {

@@ -13,17 +13,17 @@ Content-Type: application/json
 
 POST  http://localhost:3000/api/v1/user/verify-email
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE4MTE2MDh9.D96W67W28Pi1rLqQ4N3S252PohpZOYxGi6Qrsm3VCEU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
 
 {
     //  Enter otp here
-    "otp": "833792"
+    "otp": "594857"
 }
 
 ### 
 POST  http://localhost:3000/api/v1/user/set-password
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE4MTE2MDh9.D96W67W28Pi1rLqQ4N3S252PohpZOYxGi6Qrsm3VCEU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
 
 {
     // Change password as required
@@ -34,11 +34,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ
 ###
 POST  http://localhost:3000/api/v1/user/verify-2fa
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE4MTE3NjN9.IiiW0geSTbca5mja2O2Lqpak0pQazSSkchabZYhQsK8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
 
 {
     //  Enter authenticator api code here
-    "code" : "722760"
+    "code" : "396147"
 }
 
 ### //  LOGIN API ENDPOINTS
@@ -55,7 +55,7 @@ Content-Type: application/json
 GET http://localhost:3000/api/v1/user/protected
 Content-Type: application/json
 //  Change token here after Bearer
-Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjp0cnVlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTgxMTY5MywiZXhwIjoxNjgxODExODEzfQ.GiNIPHgtxT-YaREt7IkCfgfiLjIsSYh5kbGsG5l5aLc
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjp0cnVlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTk3NDEyNiwiZXhwIjoxNjgxOTc0MjQ2fQ.ViJDWTsqz0G-iuYEV8XG1GxA0Vi8a-QkzpeC4XGQZMc
 
 ###
 
