@@ -13,11 +13,11 @@ interface FormData {
   confirmPassword: string
 }
 
-interface PropsT {
+interface PropsI {
   ifSuccessGoTo: string
 }
 
-const ChangePassword: React.FC<PropsT> = (props: PropsT) => {
+const ChangePassword: React.FC<PropsI> = (props: PropsI) => {
   const [formData, setFormData] = useState<FormData>({
     newPassword: '',
     confirmPassword: ''
