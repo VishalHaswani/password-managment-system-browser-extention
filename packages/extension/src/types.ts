@@ -1,3 +1,15 @@
+export interface Credential {
+  website: string
+  username: string
+  password: string
+}
+
+export const isCredential = (obj: any): obj is Credential => {
+  return ('website' in obj && 'username' in obj && 'password' in obj)
+}
+
+export type Credentials = Record<string, Credential>
+
 export interface LoginInput {
   email: string
   password: string

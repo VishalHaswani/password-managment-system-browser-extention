@@ -5,7 +5,7 @@ import { Client as Styletron } from 'styletron-engine-atomic'
 import { BaseProvider, LightTheme } from 'baseui'
 import { Provider as StyletronProvider } from 'styletron-react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import './index.css'
 import App from './App'
@@ -24,7 +24,7 @@ root.render(
         <BaseProvider theme={LightTheme}>
           <QueryClientProvider client={queryClient} >
             <App />
-            <ReactQueryDevtools initialIsOpen={false} />
+            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
           </QueryClientProvider>
         </BaseProvider>
       </StyletronProvider>

@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useStyletron } from 'baseui'
 import { Button } from 'baseui/button'
+import { Block } from 'baseui/block'
+import { Checkbox, LABEL_PLACEMENT } from 'baseui/checkbox'
 import { FormControl } from 'baseui/form-control'
 import { Input } from 'baseui/input'
-import { Block } from 'baseui/block'
 import { Slider, Params as SliderOnChangeParams } from 'baseui/slider'
-import {
-  Checkbox,
-  LABEL_PLACEMENT
-} from 'baseui/checkbox'
+import { useCredentials } from './CredentialsContext'
+import { stringify } from 'querystring'
 
 interface FormData {
   length: number
@@ -16,6 +16,10 @@ interface FormData {
   includeUppercase: boolean
   includeNumbers: boolean
   includeSpecial: boolean
+}
+
+interface LocationState {
+  credentialUUID?: string
 }
 
 const characters = {
@@ -59,28 +63,48 @@ const PasswordGenerator: React.FC = () => {
     includeNumbers: true,
     includeSpecial: true
   })
+  const [credentialUUID, setCredentialUUID] = useState<string | undefined>(undefined)
   const [password, setPassword] = useState(generatePassword(formData))
-  const [css] = useStyletron()
+  const [css, theme] = useStyletron()
+  const navigate = useNavigate()
+  const { credentials, updateCredential } = useCredentials()
+
+  const location = useLocation()
+  useEffect(() => {
+    if (location.state !== null) {
+      const { credentialUUID: stateCredentialUUID } = location.state as LocationState
+      if (stateCredentialUUID === undefined) {
+        return
+      }
+      setPassword(credentials[stateCredentialUUID].password)
+      setCredentialUUID(stateCredentialUUID)
+    }
+  }, [location])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = event.target
     setFormData({ ...formData, [name]: value })
   }
 
-  const handleSubmit = (event: React.SyntheticEvent<HTMLButtonElement, Event>): void => {
+  const handleLengthChange = (newValue: SliderOnChangeParams): void => {
+    setFormData({ ...formData, length: newValue.value[0] })
+  }
+
+  const handleGenerate = (event: React.SyntheticEvent<HTMLButtonElement, Event>): void => {
     event.preventDefault()
     setPassword(generatePassword(formData))
   }
 
-  const handleLengthChange = (newValue: SliderOnChangeParams): void => {
-    setFormData({ ...formData, length: newValue.value[0] })
+  const handleSet = (event: React.SyntheticEvent<HTMLButtonElement, Event>): void => {
+    updateCredential({ password }, credentialUUID)
+    navigate('/passwordmanager/add', { state: { credentialUUID } })
   }
 
   return (
     <Block className={css({
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       alignItems: 'center',
       height: '100vh',
       width: '70vw',
@@ -130,10 +154,16 @@ const PasswordGenerator: React.FC = () => {
         Include special
       </Checkbox>
       </Block>
-      <Button className={css({ borderTop: 'scale800' })} onClick={handleSubmit}>Generate Password</Button>
-      <Block marginTop="scale800">
+      <Button className={css({ borderTop: 'scale800' })} onClick={handleGenerate}>Generate Password</Button>
+      <Block className={css({
+        marginTop: theme.sizing.scale800,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%'
+      })}>
         <Input
-          type="text"
+          type="password"
           value={password}
           readOnly
           overrides={{
@@ -144,6 +174,7 @@ const PasswordGenerator: React.FC = () => {
             }
           }}
         />
+        <Button onClick={handleSet}>Set</Button>
       </Block>
     </Block>
   )
