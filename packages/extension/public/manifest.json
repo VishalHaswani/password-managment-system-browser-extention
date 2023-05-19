@@ -3,7 +3,8 @@
   "manifest_version": 3,
   "version": "0.1.0",
   "description": "Save your passwords securly and effortlessly. Only remember one password.",
-  "permissions": ["storage", "tabs", "contextMenus"],
+  "permissions": ["storage", "tabs", "contextMenus", "webRequest"],
+  "host_permissions": ["http://localhost:3001/*"],
   "background": {
     "service_worker": "background.js"
   },

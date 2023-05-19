@@ -1,5 +1,6 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
+import cors from 'cors';
 import mongoose, { ConnectOptions } from 'mongoose';
 import userRoutes from './routes/user.js';
 
@@ -21,6 +22,7 @@ mongoose.connect(process.env.DB_URL as string, mongooseConnectOptions)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log('Error connecting to MongoDB:', err));
 // Set up body-parser middleware
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
