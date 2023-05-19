@@ -1,0 +1,68 @@
+//  SIGNUP API ENDPOINTS
+###
+POST  http://localhost:3000/api/v1/user/register
+Content-Type: application/json
+
+{
+    //  Change email here
+    "email":"fakagax665@lieboe.com"
+}
+
+// 
+###
+
+POST  http://localhost:3000/api/v1/user/verify-email
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
+
+{
+    //  Enter otp here
+    "otp": "594857"
+}
+
+### 
+POST  http://localhost:3000/api/v1/user/set-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
+
+{
+    // Change password as required
+    "password" : "password1"
+}
+
+
+###
+POST  http://localhost:3000/api/v1/user/verify-2fa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
+
+{
+    //  Enter authenticator api code here
+    "code" : "396147"
+}
+
+### //  LOGIN API ENDPOINTS
+
+POST http://localhost:3000/api/v1/user/login
+Content-Type: application/json
+
+{
+    "email":"fakagax665@lieboe.com",
+    "password": "password1"
+}
+
+### // Protected Route
+GET http://localhost:3000/api/v1/user/protected
+Content-Type: application/json
+//  Change token here after Bearer
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjp0cnVlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTk3NDEyNiwiZXhwIjoxNjgxOTc0MjQ2fQ.ViJDWTsqz0G-iuYEV8XG1GxA0Vi8a-QkzpeC4XGQZMc
+
+###
+
+POST http://localhost:3000/api/v1/user/upload
+Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjp0cnVlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTgxMTY5MywiZXhwIjoxNjgxODExODEzfQ.GiNIPHgtxT-YaREt7IkCfgfiLjIsSYh5kbGsG5l5aLc
+
+{
+    "fileString" : "Test String"
+}
