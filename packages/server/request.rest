@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
     //  Change email here
-    "email":"fakagax665@lieboe.com"
+    "email":"piheg48348@andorem.com"
 }
 
 // 
@@ -13,17 +13,17 @@ Content-Type: application/json
 
 POST  http://localhost:3000/api/v1/user/verify-email
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJwaWhlZzQ4MzQ4QGFuZG9yZW0uY29tIiwiaXNWYWxpZCI6ZmFsc2UsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg0NTU0OTMyfQ.Td23nQVwsXjNRjpV2kY5kV2e2ANymk6HRdcR9vajIuw
 
 {
     //  Enter otp here
-    "otp": "594857"
+    "otp": "922710"
 }
 
 ### 
 POST  http://localhost:3000/api/v1/user/set-password
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJwaWhlZzQ4MzQ4QGFuZG9yZW0uY29tIiwiaXNWYWxpZCI6ZmFsc2UsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg0NTU0OTMyfQ.Td23nQVwsXjNRjpV2kY5kV2e2ANymk6HRdcR9vajIuw
 
 {
     // Change password as required
@@ -34,11 +34,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ
 ###
 POST  http://localhost:3000/api/v1/user/verify-2fa
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjpmYWxzZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODE5NzQwMDV9.iiv2ElIfYvE92z2fvhbTsRaBqbCYOjgnPEGpQ15mAZM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJwaWhlZzQ4MzQ4QGFuZG9yZW0uY29tIiwiaXNWYWxpZCI6ZmFsc2UsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg0NTU0OTMyfQ.Td23nQVwsXjNRjpV2kY5kV2e2ANymk6HRdcR9vajIuw
 
 {
     //  Enter authenticator api code here
-    "code" : "396147"
+    "otp" : "520630"
 }
 
 ### //  LOGIN API ENDPOINTS
@@ -47,7 +47,7 @@ POST http://localhost:3000/api/v1/user/login
 Content-Type: application/json
 
 {
-    "email":"fakagax665@lieboe.com",
+    "email":"piheg48348@andorem.com",
     "password": "password1"
 }
 
@@ -55,14 +55,21 @@ Content-Type: application/json
 GET http://localhost:3000/api/v1/user/protected
 Content-Type: application/json
 //  Change token here after Bearer
-Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjp0cnVlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTk3NDEyNiwiZXhwIjoxNjgxOTc0MjQ2fQ.ViJDWTsqz0G-iuYEV8XG1GxA0Vi8a-QkzpeC4XGQZMc
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJwaWhlZzQ4MzQ4QGFuZG9yZW0uY29tIiwiaXNWYWxpZCI6ZmFsc2UsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg0NTU1MTkyfQ.lcyJRqTJ9Jk1B4ePAWhSWKR7FOCXDm1tISG59Jrnh7s
 
 ###
 
 POST http://localhost:3000/api/v1/user/upload
 Content-Type: application/json
-Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmYWthZ2F4NjY1QGxpZWJvZS5jb20iLCJpc1ZhbGlkIjp0cnVlLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTgxMTY5MywiZXhwIjoxNjgxODExODEzfQ.GiNIPHgtxT-YaREt7IkCfgfiLjIsSYh5kbGsG5l5aLc
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJwaWhlZzQ4MzQ4QGFuZG9yZW0uY29tIiwiaXNWYWxpZCI6dHJ1ZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODQ1NTUwMzMsImV4cCI6MTY4NDU1NTYzM30.Gj1_CODBoloQn2TDrW6bs6UBSfpDZu0ssin6UDcJZwo
 
 {
     "fileString" : "Test String"
 }
+
+###
+
+GET http://localhost:3000/api/v1/user/download
+Content-Type: application/json
+//  Change token here after Bearer
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJwaWhlZzQ4MzQ4QGFuZG9yZW0uY29tIiwiaXNWYWxpZCI6dHJ1ZSwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODQ1NTUwMzMsImV4cCI6MTY4NDU1NTYzM30.Gj1_CODBoloQn2TDrW6bs6UBSfpDZu0ssin6UDcJZwo

@@ -128,7 +128,7 @@ export const setPassword = async (req: RequestWithUserID, res: Response) => {
 //  Verifying 2FA with authenticator app. Security review required.
 export const verify2fa = async (req: RequestWithUserID, res: Response) => {
   try {
-    const { code } = req.body;
+    const { otp } = req.body;
     const email = req.userID;
     // Find the user with the provided email id
     const user = await User.findOne({ email });
@@ -136,12 +136,12 @@ export const verify2fa = async (req: RequestWithUserID, res: Response) => {
       return res.status(400).json({ message: 'Invalid email.' });
     }
     // Verify the 2FA code using authenticatorapi.com
-    const response = await axios.get<string>(`https://www.authenticatorapi.com/Validate.aspx?Pin=${code}&SecretCode=${user.secret}`);
+    const response = await axios.get<string>(`https://www.authenticatorapi.com/Validate.aspx?Pin=${otp}&SecretCode=${user.secret}`);
     const isValid = response.data;
 
     if (isValid === 'True') {
       //  Generate Token. Token Currently Signed by _id field of db. To be updated.
-      const jwtToken = jwt.sign({ userID: email, isValid: true, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '2m' });
+      const jwtToken = jwt.sign({ userID: email, isValid: true, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '10m' });
       res.json({ token: jwtToken });
     } else {
       res.status(400).json({ message: 'invalid 2FA code. Not Verified.' });
@@ -185,5 +185,18 @@ export const uploadFileString = async (req: AuthRequest, res: Response) => {
     res.status(201).json({ message: 'File updated successfully' });
   } catch (error) {
     res.status(500).json({ message: 'Internal server error.' });
+  }
+};
+
+export const downloadFileString = async (req: AuthRequest, res: Response) => {
+  try {
+    const email = req.userID;
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid email.' });
+    }
+    res.status(201).json({ fileString: user.file });
+  } catch (error) {
+    return res.status(400).json({ message: 'Cannot retrieve file' });
   }
 };

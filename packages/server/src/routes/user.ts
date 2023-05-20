@@ -1,7 +1,7 @@
 import express from 'express';
 import type { Router, Request, Response } from 'express';
 import {
-  registerUser, verifyEmail, loginUser, verify2fa, setPassword, uploadFileString,
+  registerUser, verifyEmail, loginUser, verify2fa, setPassword, uploadFileString, downloadFileString,
 } from '../controllers/user.js';
 import auth from '../middlewares/auth.js';
 import userInfo from '../middlewares/userInfo.js';
@@ -32,5 +32,8 @@ router.get('/protected', auth, async (req: Request, res: Response) => {
 
 // File string upload route
 router.post('/upload', auth, uploadFileString);
+
+// File String Download route
+router.get('/download', auth, downloadFileString);
 
 export default router;
